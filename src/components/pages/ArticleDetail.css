@@ -1,0 +1,8 @@
+.stickycomments{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
+  }
+  .edit:hover{
+    color: #4285F4;
+  }

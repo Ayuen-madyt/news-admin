@@ -1,0 +1,16 @@
+/* .headarticle{
+    display: flex;
+    justify-content: space-between;
+} */
+.searcharticles{
+    display: flex;
+    background-color: white;
+    height: 60px;
+    border-radius: 30px;
+}
+input:focus{
+    outline: none;
+}
+.articletitle-table:hover{
+    color: rgb(17, 235, 235);
+}

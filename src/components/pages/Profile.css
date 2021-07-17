@@ -1,0 +1,18 @@
+.profilepic{
+    height: 200px !important;
+    width: 200px;
+    object-fit: cover;
+}
+.profile{
+    display: flex;
+    background-color: white;
+    padding:10px;
+    border: 1px solid rgb(226, 221, 221);
+    border-radius: 5px;
+}
+.formd{
+    padding: 10px;
+    border: 1px solid rgb(226, 221, 221);
+    border-radius: 5px;
+    background-color: white;
+}
