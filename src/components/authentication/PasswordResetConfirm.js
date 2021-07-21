@@ -2,7 +2,7 @@
 
 import React,{useState} from 'react'
 import './Login.css'
-import logo3 from './logo3.webp'
+import novas from './novas.webp'
 import { passWordResetConfirmSuccess, passWordResetConfirmFail} from '../../redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
@@ -77,7 +77,7 @@ function PasswordResetConfirm() {
         <div className="body">
             <div className="signup-form">
             <form action="/examples/actions/confirmation.php" method="post">
-            <img style={{height:"90px", objectFit:"contain"}} alt="..." src={logo3} />
+            <img style={{height:"90px", objectFit:"contain"}} alt="..." src={novas} />
             <h2 className="h4">Enter your new password</h2>
             <p>Please fill in this form to reset your password!</p>
             {/* login error */}

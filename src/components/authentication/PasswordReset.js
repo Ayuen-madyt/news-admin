@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import './SignUp.css'
 import axios from 'axios'
 import { passWordResetSuccess,passWordResetFail } from '../../redux/actions';
-import logo3 from './logo3.webp'
+import novas from './novas.webp'
 import { useDispatch, useSelector } from 'react-redux';
 
 // css styling is coming from signup.css
@@ -80,7 +80,7 @@ function PasswordReset() {
         <div className="body">
             <div className="signup-form">
             <form action="/examples/actions/confirmation.php" method="post">
-            <img style={{height:"90px", objectFit:"contain"}} alt="..." src={logo3} />
+            <img style={{height:"90px", objectFit:"contain"}} alt="..." src={novas} />
             <h2 className="h4">Password Reset</h2>
             <p>Please enter your email here to reset your password!</p>
             {/* wsignup error */}

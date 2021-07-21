@@ -216,7 +216,7 @@ function TermsAndConditions() {
                     <h5>CONTACT</h5>
                     <p>
                         if you want to send any notice under these Terms or have any questions 
-                        regarding the Service, you may contact us at: south101.info@gmail.com
+                        regarding the Service, you may contact us at: novas101.info@gmail.com
                     </p>
                 </div>
 

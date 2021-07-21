@@ -84,7 +84,7 @@ function CreateArticle() {
                             Not Featured
                             </label>
                         </div>
-                        <p style={{fontSize:"13px"}} className="text-muted mb-0"><strong>N/B: </strong>Always mark <strong>Not Featured</strong> 
+                        <p style={{fontSize:"13px"}} className="text-muted mb-0"><strong>N/B: </strong>Always mark <strong>Not Featured </strong>  
                         unless the article is of importance and affects most people.
                         you can only mark one choice, not both.
                         </p>

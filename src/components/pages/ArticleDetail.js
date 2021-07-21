@@ -57,7 +57,7 @@ function ArticleDetail(props) {
     }
 
     const makeTrending = (id)=>{
-        axios.put(` http://127.0.0.1:8000/articles/article_detail/${id}`, {
+        axios.put(`http://127.0.0.1:8000/articles/article_detail/${id}`, {
             trending:true,
             title: article.title,
             category:article.category,

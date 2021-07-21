@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import './SignUp.css'
-import logo3 from './logo3.webp'
+import novas from './novas.webp'
 import axios from 'axios'
 import { getSignUpError } from '../../redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
@@ -98,7 +98,7 @@ function SignUp() {
         <div className="body">
             <div className="signup-form">
             <form method="post">
-            <img style={{height:"90px", objectFit:"contain"}} alt="..." src={logo3} />
+            <img style={{height:"90px", objectFit:"contain"}} alt="..." src={novas} />
             <h2 className="h4">Create Your Account</h2>
             <p>Please fill in this form to create an account!</p>
             {/* wsignup error */}

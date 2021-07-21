@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import './Login.css'
-import logo3 from './logo3.webp'
+import novas from './novas.webp'
 import { addUserDetails, getLoginError } from '../../redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
@@ -57,7 +57,7 @@ function Login() {
         <div className="body">
             <div className="signup-form">
             <form method="post">
-            <img style={{height:"90px", objectFit:"contain"}} alt="..." src={logo3} />
+            <img style={{height:"90px", objectFit:"contain"}} alt="..." src={novas} />
             <h2 className="h4">Sign in to your account</h2>
             <p>Please fill in this form to create an account!</p>
             {/* login error */}
