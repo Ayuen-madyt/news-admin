@@ -115,30 +115,36 @@ export const getUsers = (users)=>{
 export const fetchUsers = ()=>(dispatch)=>{
     dispatch(loading());
     // http://127.0.0.1:8000
-   return axios.get(' http://127.0.0.1:8000/users/list/')
+   return axios.get('/users/list/')
    .then(res=>{
        dispatch(getUsers(res.data))
    })
-   .catch(err=>console.log(err))
+   .catch(
+       //err=>console.log(err)
+    )
 }
 
 // thunk for fetching profiles
 export const fetchProfiles = ()=>(dispatch)=>{
     dispatch(loading());
-   return axios.get(' http://127.0.0.1:8000/users/profile/')
+   return axios.get('/users/profile/')
    .then(res=>{
        dispatch(getProfiles(res.data))
    })
-   .catch(err=>console.log(err))
+   .catch(
+       //err=>console.log(err)
+    )
 }
 
 // this function is an action which will be dispatched---
 // to the store in app.js inside useEffect
 export const fetchData = ()=>(dispatch)=>{
     dispatch(loading());
-   return axios.get(' http://127.0.0.1:8000/articles/')
+   return axios.get('/articles/')
    .then(res=>{
        dispatch(getArticles(res.data))
    })
-   .catch(err=>console.log(err))
+   .catch(
+       //err=>console.log(err)
+    )
 }

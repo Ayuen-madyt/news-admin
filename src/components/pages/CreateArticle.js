@@ -25,7 +25,7 @@ function CreateArticle() {
     function sendData(e){
         e.preventDefault();
         // http://127.0.0.1:8000
-        axios.post(' http://127.0.0.1:8000/articles/', formData, {
+        axios.post('/articles/', formData, {
             headers:{
                 Authorization:`Token ${localStorage.getItem('token')}` //gettng token from localstorage
             }
@@ -38,7 +38,9 @@ function CreateArticle() {
             setTrending(null)
             setBody('')
         })
-        .catch(err=>console.log(err.response.data))
+        .catch(
+            //console.log(err.response.data)
+        )
 
         history.push('/control-admin-panel/articles') //directing a user to articles after successfully posting article
         window.location.reload();

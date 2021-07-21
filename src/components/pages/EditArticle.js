@@ -45,13 +45,17 @@ function EditArticle() {
     function sendData(e){
         e.preventDefault();
         // http://127.0.0.1:8000
-        axios.put(`http://127.0.0.1:8000/articles/${articleId}/`, formData, {
+        axios.put(`/articles/${articleId}/`, formData, {
             headers:{
                 Authorization:`Token ${localStorage.getItem('token')}` //getting token from localstorage
             }
         })
-        .then(res=>console.log(res.data.updatedAt))
-        .catch(err=>console.log(err.response.data))
+        .then(
+            //res=>console.log(res.data.updatedAt)
+        )
+        .catch(
+            //err=>console.log(err.response.data)
+        )
         setTitle('');
         setCategory('')
         setBody('')

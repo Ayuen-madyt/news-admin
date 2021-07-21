@@ -27,7 +27,7 @@ function Login() {
     const login = (e)=>{
         e.preventDefault();
         // http://127.0.0.1:8000
-        axios.post(' http://127.0.0.1:8000/users/api-token-auth/', data)
+        axios.post('/users/api-token-auth/', data)
         .then(res=>{
             dispatch(addUserDetails(res.data));
             history.push("/control-admin-panel")

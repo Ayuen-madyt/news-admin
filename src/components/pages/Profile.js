@@ -32,8 +32,12 @@ function Profile() {
                 Authorization:`Token ${localStorage.getItem('token')}`
             }
         })
-        .then(res=>console.log(res.data))
-        .catch(err=>console.log(err.response.data))
+        .then(
+            //res=>console.log(res.data)
+        )
+        .catch(
+            //err=>console.log(err.response.data)
+        )
         setAbout('');
         setImage('')
         history.push('/control-admin-panel/profile')
@@ -44,7 +48,7 @@ function Profile() {
         <div className="m-4">
             <p className="bg-dark text-white p-2 h5">Settings</p>
             <div className="profile mt-3">
-                {userProfile() && <img className="profilepic" src={userProfile().image} alt="..."/>}
+                {userProfile() && <img className="profilepic" src={userProfile().image} alt={`${name}'s profile`}/>}
                 <div className="bio ml-3">
                     <span style={{display:"flex"}} ><p>Name:</p> <p className="ml-2 text-muted">{name}</p></span>
                     <span style={{display:"flex"}} ><p>Email:</p> <p className="ml-2 text-muted">{email}</p></span>

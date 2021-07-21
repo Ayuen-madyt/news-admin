@@ -41,23 +41,23 @@ function ArticleDetail(props) {
     const delete_article = (id)=>{
         dispatch(deleteArticle(id));
         // http://127.0.0.1:8000
-        axios.delete(` http://127.0.0.1:8000/articles/article_detail/${id}`, {
+        axios.delete(`/articles/article_detail/${id}`, {
             headers:{
                 Authorization:`Token ${localStorage.getItem('token')}`,
             }
         })
         .then(res=>{
-            console.log(res.data)
+            // console.log(res.data)
         })
         .catch(error=>{
-            console.log(error.response.data)
+            // console.log(error.response.data)
         })
         history.push('/control-admin-panel/articles')
 
     }
 
     const makeTrending = (id)=>{
-        axios.put(`http://127.0.0.1:8000/articles/article_detail/${id}`, {
+        axios.put(`/articles/article_detail/${id}`, {
             trending:true,
             title: article.title,
             category:article.category,
@@ -69,10 +69,10 @@ function ArticleDetail(props) {
             }
         })
         .then(res=>{
-            console.log(res.data)
+            // console.log(res.data)
         })
         .catch(error=>{
-            console.log(error.response.data)
+            // console.log(error.response.data)
         })
         history.push('/control-admin-panel/articles')
         window.location.reload()
@@ -80,7 +80,7 @@ function ArticleDetail(props) {
     }
 
     const makeFeatured = (id)=>{
-        axios.put(` http://127.0.0.1:8000/articles/article_detail/${id}`, {
+        axios.put(`/articles/article_detail/${id}`, {
             featured:true,
             title: article.title,
             category:article.category,
@@ -92,10 +92,10 @@ function ArticleDetail(props) {
             }
         })
         .then(res=>{
-            console.log(res.data)
+            // console.log(res.data)
         })
         .catch(error=>{
-            console.log(error.response.data)
+            // console.log(error.response.data)
         })
         history.push('/control-admin-panel/articles')
         window.location.reload()

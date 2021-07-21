@@ -69,7 +69,7 @@ function Gallery() {
             <div className="gallery">
                 {currentPosts.map(article=>(
                     <div className="mt-2" key={article.id}>
-                        <img style={{height:"300px", width:"100%", objectFit:"cover"}} src={article.image} alt="..." />
+                        <img style={{height:"300px", width:"100%", objectFit:"cover"}} src={article.image} alt={article.title} />
                     </div>
                 ))}
             </div>

@@ -38,7 +38,7 @@ function SignUp() {
         if(agreeToTerms){
             setLoading(!loading)
         e.preventDefault();
-        axios.post('http://127.0.0.1:8000/user/accounts/registration/', formData)
+        axios.post('/user/accounts/registration/', formData)
         .then(res=>{
             setLoading(false)
             const token = res.data.key;

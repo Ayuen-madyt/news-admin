@@ -20,24 +20,24 @@ function PasswordReset() {
         setLoading(!loading)
         e.preventDefault();
         // http://127.0.0.1:8000
-        axios.post(' http://127.0.0.1:8000/user/accounts/password/reset/', data)
+        axios.post('/user/accounts/password/reset/', data)
         .then(res=>{
-            console.log(res.data)
+            // console.log(res.data)
             dispatch(passWordResetSuccess(res.data.detail))
             setLoading(false)
         })
         .catch(error=>{
             setLoading(false)
             if(error.response.data.email[0]==="Enter a valid email address."){
-                console.log(error.response.data)
+                // console.log(error.response.data)
                 return dispatch(passWordResetFail(error.response.data.email[0]))
             }
             if(error.response.data.email[0]==="This field may not be blank."){
-                console.log(error.response.data)
+                // console.log(error.response.data)
                 return dispatch(passWordResetFail(error.response.data.email[0]))
             }
             if(error.response.data.email.email[0]){
-                console.log(error.response.data)
+                // console.log(error.response.data)
                 return dispatch(passWordResetFail(error.response.data.email.email[0]))
             }
         })

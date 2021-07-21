@@ -1,5 +1,5 @@
 import React from 'react'
-
+// this component is not in use
 function Search() {
     return (
         <div>
