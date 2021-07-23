@@ -78,7 +78,7 @@ function Login() {
             <div className="form-group">
                 <div className="input-group">
                 <span className="input-group-addon"><i className="fa fa-lock" /></span>
-                <input value={passWord} onChange={e=>setPassWord(e.target.value)} type="text" className="form-control" name="password" placeholder="Password" required="required" />
+                <input value={passWord} onChange={e=>setPassWord(e.target.value)} type="text" type="password" className="form-control" name="password" placeholder="Password" required="required" />
                 </div>
             </div>
             {/* <div className="form-group">

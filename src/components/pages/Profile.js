@@ -27,7 +27,7 @@ function Profile() {
     function sendProfile(e){
         // e.preventDefault();
         // http://127.0.0.1:8000/user/profile
-        axios.put(`/${userProfile().id}/`, formData, {
+        axios.put(`/users/profile/${userProfile().id}/`, formData, {
             headers:{
                 Authorization:`Token ${localStorage.getItem('token')}`
             }
@@ -41,7 +41,7 @@ function Profile() {
         setAbout('');
         setImage('')
         history.push('/control-admin-panel/profile')
-        //window.location.reload();
+        window.location.reload();
     }
 
     return (

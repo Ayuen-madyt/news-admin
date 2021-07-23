@@ -47,6 +47,7 @@ function SignUp() {
             }
         })
         .catch(error=>{
+            // console.log(error.response.data)
             setLoading(false)
             if (error.response) {
                 //dispatching signup errors
@@ -121,7 +122,7 @@ function SignUp() {
             <div className="form-group">
                 <div className="input-group">
                 <span className="input-group-addon"><i className="fa fa-lock" /></span>
-                <input value={passWord} onChange={e=>setPassWord(e.target.value)} type="text" className="form-control" name="password" placeholder="Password" required="required" />
+                <input value={passWord} onChange={e=>setPassWord(e.target.value)} type="password" className="form-control" name="password" placeholder="Password" required="required" />
                 </div>
             </div>
             <div className="form-group">
@@ -130,7 +131,7 @@ function SignUp() {
                     <i className="fa fa-lock" />
                     <i className="fa fa-check" />
                 </span>
-                <input value={passConfirm} onChange={e=>setPassConfirm(e.target.value)} type="text" className="form-control" name="confirm_password" placeholder="Confirm Password" required="required" />
+                <input value={passConfirm} onChange={e=>setPassConfirm(e.target.value)} type="password" className="form-control" name="confirm_password" placeholder="Confirm Password" required="required" />
                 </div>
             </div>
             <div className="form-group">
