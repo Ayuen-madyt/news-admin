@@ -12,7 +12,23 @@ export const PASSWORD_RESET_SUCCESS = "PASSWORD_RESET_SUCCESS"
 export const PASSWORD_RESET_FAIL = "PASSWORD_RESET_FAIL"
 export const PASSWORD_RESET_CONFIRM_SUCCESS = "PASSWORD_RESET_CONFIRM_SUCCESS"
 export const PASSWORD_RESET_CONFIRM_FAIL = "PASSWORD_RESET_CONFIRM_FAIL"
+export const POST_SUCCESS ="POST_SUCCESS";
+export const POST_FAIL ="POST_FAIL";
 
+
+// post article action
+export const postSuccess = ()=>{
+    return{
+        type: POST_SUCCESS
+    }
+}
+
+// post fail
+export const postFail = ()=>{
+    return{
+        type: POST_FAIL
+    }
+}
 
 // error action for signup
 export const getSignUpError = (error)=>{

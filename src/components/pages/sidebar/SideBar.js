@@ -34,14 +34,14 @@ export default function Sidebar() {
               Home
             </li>
             </Link>
-            <Link style={{textDecoration:"none", color:"white"}} to="/control-admin-panel/add-article" className="text-white sidebarListItem">
+            <Link to ="/control-admin-panel/add-article" style={{textDecoration:"none", color:"white"}} className="text-white sidebarListItem">
               <CreateIcon className="sidebarIcon" />
               Add article
             </Link>
-            <Link style={{textDecoration:"none"}} to="/control-admin-panel/articles" className="text-white sidebarListItem">
+            <a href="/control-admin-panel/articles" style={{textDecoration:"none"}}  className="text-white sidebarListItem">
               <ListAltIcon className="sidebarIcon" />
               Your articles
-            </Link>
+            </a>
           </ul>
         </div>
         <div className="sidebarMenu">

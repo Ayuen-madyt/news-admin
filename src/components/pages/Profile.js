@@ -40,8 +40,8 @@ function Profile() {
         )
         setAbout('');
         setImage('')
-        history.push('/control-admin-panel/profile')
-        window.location.reload();
+        // history.push('/control-admin-panel/profile')
+        // window.location.reload();
     }
 
     return (

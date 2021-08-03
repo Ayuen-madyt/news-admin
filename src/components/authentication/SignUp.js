@@ -52,6 +52,7 @@ function SignUp() {
             if (error.response) {
                 //dispatching signup errors
                 dispatch(getSignUpError(error.response.data))
+                console.log(error.response.data)
             }
         })
         }

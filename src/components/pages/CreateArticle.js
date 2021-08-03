@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import {CKEditor} from '@ckeditor/ckeditor5-react'
 import axios from 'axios'
+import { postSuccess, postFail } from '../../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
 
 function CreateArticle() {
@@ -12,6 +14,7 @@ function CreateArticle() {
     const[trending, setTrending] = useState(null);
     const[body, setBody] = useState(''); 
     let history = useHistory();
+    const dispatch = useDispatch();
 
     const formData = new FormData();
 
@@ -31,6 +34,7 @@ function CreateArticle() {
             }
         })
         .then(res=>{
+            dispatch(postSuccess())
             setTitle('');
             setCategory('')
             setImage('')
@@ -38,16 +42,44 @@ function CreateArticle() {
             setTrending(null)
             setBody('')
         })
-        .catch(
-            //console.log(err.response.data)
+        .catch(err=>{
+            dispatch(postFail())
+            console.log(err.response.data)
+        }
         )
+        // history.push('/control-admin-panel/articles') 
+        window.scrollTo(0,0);
+    }
 
-        history.push('/control-admin-panel/articles') //directing a user to articles after successfully posting article
-        window.location.reload();
+    const post_success = useSelector(state=>state.postArticleResponses.postSuccess);
+    const post_fail = useSelector(state=>state.postArticleResponses.postFail);
+
+    // function for alerting the user if the post was successful
+    const postArticleSuccess = ()=>{
+        if(post_success){
+            return(
+                <div className="alert alert-success" role="alert">
+                    Article was successfully published
+                </div>
+            )
+        }
+    }
+
+    // function fro alerting the user if the post was unsuccessful
+    const postArticleFail = ()=>{
+        if(post_fail){
+            return(
+                <div className="alert alert-danger" role="alert">
+                    There was an error publishing the article !
+                </div>
+            )
+        }
     }
 
     return (
         <div className="m-4"> 
+        {postArticleSuccess()}
+        {postArticleFail()}
             <div className="bg-primary text-white p-2">
                 <h2 className="h5">Add an article</h2>
             </div>

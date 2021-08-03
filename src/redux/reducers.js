@@ -10,7 +10,9 @@ import {
     PASSWORD_RESET_CONFIRM_FAIL,
     PASSWORD_RESET_SUCCESS,
     PASSWORD_RESET_FAIL,
-    USERS
+    USERS,
+    POST_SUCCESS,
+    POST_FAIL
 } from './actions'
 
 const initialState = {
@@ -24,7 +26,11 @@ const initialState = {
         login:[]
     },
     passwordReset:[],
-    passwordConfirm:[]
+    passwordConfirm:[],
+    postArticleResponses:{
+        postSuccess:false,
+        postFail:false
+    }
 }
 
 export const reducer = (state=initialState, action)=>{
@@ -67,6 +73,25 @@ export const reducer = (state=initialState, action)=>{
             return{
                 ...state,
                 profile:action.payload
+            }
+        case POST_SUCCESS:
+            return{
+                ...state,
+                postArticleResponses:{
+                    ...state.postArticleResponses,
+                    postSuccess:true,
+                    postFail:false
+                }
+            }
+        
+        case POST_FAIL:
+            return{
+                ...state,
+                postArticleResponses:{
+                    ...state.postArticleResponses,
+                    postSuccess:false,
+                    postFail:true
+                }
             }
         case SIGNUP_ERROR:
             return{
