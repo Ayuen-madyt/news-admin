@@ -28,27 +28,29 @@ function Profile() {
 
     function sendProfile(e){
         e.preventDefault();
-        // http://127.0.0.1:8000/user/profile
+        // http://127.0.0.1:8000/users/profile
         axios.put(`/users/profile/${userProfile().id}/`, formData, {
             headers:{
                 Authorization:`Token ${localStorage.getItem('token')}`
             }
         })
-        .then(
-            //res=>console.log(res.data)
+        .then(res=>{
+            console.log(res.data)
             dispatch(updateProfileSuccess())
+            }
         )
-        .catch(
-            //err=>console.log(err.response.data)
+        .catch(err=>{
+            console.log(err.response.data)
             dispatch(updateProfileFail())
+            }
         )
         setAbout('');
         setImage('')
         window.scrollTo(0,0);
     }
 
-    const profile_post_success = useSelector(state=>state.profileUpdateResponses.profilePoststSuccess);
-    const profile_post_fail = useSelector(state=>state.profileUpdateResponses.profilePoststFail);
+    const profile_post_success = useSelector(state=>state.profileUpdateResponses.profilePostSuccess);
+    const profile_post_fail = useSelector(state=>state.profileUpdateResponses.profilePostFail);
 
     // function for alerting the user if the post was successful
     const profileSuccess = ()=>{
