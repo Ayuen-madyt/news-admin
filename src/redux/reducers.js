@@ -12,7 +12,9 @@ import {
     PASSWORD_RESET_FAIL,
     USERS,
     POST_SUCCESS,
-    POST_FAIL
+    POST_FAIL,
+    UPDATE_PROFILE_SUCCESS,
+    UPDATE_PROFILE_FAIL
 } from './actions'
 
 const initialState = {
@@ -30,6 +32,10 @@ const initialState = {
     postArticleResponses:{
         postSuccess:false,
         postFail:false
+    },
+    profileUpdateResponses:{
+        profilePoststSuccess:false,
+        profilePostFail:false
     }
 }
 
@@ -91,6 +97,25 @@ export const reducer = (state=initialState, action)=>{
                     ...state.postArticleResponses,
                     postSuccess:false,
                     postFail:true
+                }
+            }
+
+        case UPDATE_PROFILE_SUCCESS:
+            return{
+                ...state,
+                profileUpdateResponses:{
+                    ...state.profileUpdateResponses,
+                    profilePostSuccess:true,
+                    profilePostFail:false
+                }
+            }
+        case UPDATE_PROFILE_FAIL:
+            return{
+                ...state,
+                profileUpdateResponses:{
+                    ...state.profileUpdateResponses,
+                    profilePostSuccess:false,
+                    profilePostFail:true
                 }
             }
         case SIGNUP_ERROR:

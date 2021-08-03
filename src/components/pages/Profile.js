@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import './Profile.css'
 import axios from 'axios'
-import {useSelector} from 'react-redux'
+import { updateProfileSuccess, updateProfileFail } from '../../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
 import {useHistory} from 'react-router-dom'
 
 function Profile() {
@@ -12,6 +13,7 @@ function Profile() {
     const email = localStorage.getItem('email');
     const profiles = useSelector(state=>state.profile)
     let history = useHistory();
+    const dispatch = useDispatch();
 
     const userProfile = ()=>{
         if(profiles.length>0){
@@ -25,7 +27,7 @@ function Profile() {
     formData.append("about", about);
 
     function sendProfile(e){
-        // e.preventDefault();
+        e.preventDefault();
         // http://127.0.0.1:8000/user/profile
         axios.put(`/users/profile/${userProfile().id}/`, formData, {
             headers:{
@@ -34,18 +36,46 @@ function Profile() {
         })
         .then(
             //res=>console.log(res.data)
+            dispatch(updateProfileSuccess())
         )
         .catch(
             //err=>console.log(err.response.data)
+            dispatch(updateProfileFail())
         )
         setAbout('');
         setImage('')
-        // history.push('/control-admin-panel/profile')
-        // window.location.reload();
+        window.scrollTo(0,0);
+    }
+
+    const profile_post_success = useSelector(state=>state.profileUpdateResponses.profilePoststSuccess);
+    const profile_post_fail = useSelector(state=>state.profileUpdateResponses.profilePoststFail);
+
+    // function for alerting the user if the post was successful
+    const profileSuccess = ()=>{
+        if(profile_post_success){
+            return(
+                <div className="alert alert-success" role="alert">
+                    Profile was successfully updated! Reload the page to see the changes
+                </div>
+            )
+        }
+    }
+
+    // function fro alerting the user if the post was unsuccessful
+    const profileFail = ()=>{
+        if(profile_post_fail){
+            return(
+                <div className="alert alert-danger" role="alert">
+                    There was an error updating profile!
+                </div>
+            )
+        }
     }
 
     return (
         <div className="m-4">
+            {profileSuccess()}
+            {profileFail()}
             <p className="bg-dark text-white p-2 h5">Settings</p>
             <div className="profile mt-3">
                 {userProfile() && <img className="profilepic" src={userProfile().image} alt={`${name}'s profile`}/>}

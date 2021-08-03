@@ -14,7 +14,8 @@ export const PASSWORD_RESET_CONFIRM_SUCCESS = "PASSWORD_RESET_CONFIRM_SUCCESS"
 export const PASSWORD_RESET_CONFIRM_FAIL = "PASSWORD_RESET_CONFIRM_FAIL"
 export const POST_SUCCESS ="POST_SUCCESS";
 export const POST_FAIL ="POST_FAIL";
-
+export const UPDATE_PROFILE_SUCCESS ="UPDATE_PROFILE";
+export const UPDATE_PROFILE_FAIL ="UPDATE_PROFILE_FAIL";
 
 // post article action
 export const postSuccess = ()=>{
@@ -30,6 +31,17 @@ export const postFail = ()=>{
     }
 }
 
+// update profile action
+export const updateProfileSuccess = ()=>{
+    return{
+        type: UPDATE_PROFILE_SUCCESS
+    }
+}
+export const updateProfileFail = ()=>{
+    return{
+        type: UPDATE_PROFILE_FAIL
+    }
+}
 // error action for signup
 export const getSignUpError = (error)=>{
     return{
