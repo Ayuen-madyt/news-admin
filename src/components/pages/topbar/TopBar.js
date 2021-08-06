@@ -30,6 +30,9 @@ export default function Topbar() {
         <img className="logo" alt="..." src={novas} />
         </div>
         <div className="topRight">
+        <a href="https://novas101-frontend.herokuapp.com/" target="_blank" className="h6 text-muted topbarIconContainer">
+            View Site
+          </a>
           <div onClick={logOut} className="h6 text-muted topbarIconContainer">
             logout
           </div>
